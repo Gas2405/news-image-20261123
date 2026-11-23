@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The World in One Day — Monday 23 November 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1024px; height: 1024px; overflow: hidden; }
+  body {
+    background: #f6f1e3;
+    color: #1a1510;
+    font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
+    padding: 20px 38px 12px 38px;
+    display: flex; flex-direction: column;
+  }
+  .serif { font-family: "Liberation Serif", Georgia, serif; }
+
+  /* ---------- header ---------- */
+  .kicker {
+    display: flex; justify-content: space-between;
+    font-size: 12px; font-weight: bold; letter-spacing: 2.5px; color: #6f6452;
+    border-bottom: 2px solid #1a1510; padding-bottom: 6px;
+  }
+  .masthead {
+    text-align: center; font-size: 33px; font-weight: bold; letter-spacing: 7px;
+    padding-top: 7px; line-height: 1;
+  }
+  .dateline {
+    text-align: center; font-size: 46px; font-weight: bold; letter-spacing: 1px;
+    color: #9c1a1a; padding: 2px 0 6px 0; white-space: nowrap; line-height: 1;
+  }
+  .thick-rule { border-top: 6px solid #1a1510; border-bottom: 1px solid #1a1510; height: 5px; margin-bottom: 11px; }
+
+  /* ---------- shared ---------- */
+  .eyebrow { font-size: 12.5px; font-weight: bold; letter-spacing: 2px; color: #9c1a1a; }
+  .deck { color: #38322a; line-height: 1.33; }
+  .rule-thin { border-top: 1px solid #b3a98f; }
+  .rule-heavy { border-top: 2px solid #1a1510; }
+
+  /* ---------- lead story ---------- */
+  .lead-head { font-size: 40px; line-height: 1.04; font-weight: bold; padding: 4px 0 8px 0; }
+  .lead-row { display: flex; gap: 24px; }
+  .lead-row .copy { flex: 1; }
+  .lead-row .copy p { font-size: 17.5px; }
+  .lead-row .copy p + p { padding-top: 7px; font-size: 16px; font-style: italic; color: #5a5344; }
+  .lead-art { width: 320px; flex: none; }
+
+  /* ---------- four middle stories ---------- */
+  .grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; }
+  .story { display: flex; gap: 13px; padding: 11px 0 12px 0; }
+  .story .thumb { width: 104px; flex: none; }
+  .story h2 { font-size: 22px; line-height: 1.12; font-weight: bold; padding: 3px 0 4px 0; }
+  .story .deck { font-size: 15px; }
+
+  /* ---------- bottom story ---------- */
+  .bottom { display: flex; gap: 14px; align-items: center; padding-top: 11px; margin-top: 2px; }
+  .bottom .thumb { width: 76px; flex: none; }
+  .bottom h2 { font-size: 22px; font-weight: bold; padding: 2px 0 3px 0; }
+  .bottom .deck { font-size: 15px; }
+  .bottom .update {
+    flex: none; background: #9c1a1a; color: #f6f1e3; font-size: 12px; font-weight: bold;
+    letter-spacing: 1.5px; padding: 5px 9px; margin-left: 6px;
+  }
+
+  /* ---------- foot ---------- */
+  .ticker {
+    margin-top: 11px; background: #1a1510; color: #f6f1e3;
+    font-size: 13px; padding: 8px 10px; text-align: center;
+    white-space: nowrap; overflow: hidden;
+  }
+  .ticker b { color: #dfa93d; letter-spacing: 1.5px; }
+  .sources { margin-top: 7px; text-align: center; font-size: 12.5px; color: #6f6452; letter-spacing: 0.3px; }
+</style>
+</head>
+<body>
+
+  <div class="kicker"><span>MAKE.FUN &middot; DAILY NEWS IMAGE</span><span>SIX STORIES &middot; ONE PAGE</span></div>
+  <div class="masthead serif">THE WORLD IN ONE DAY</div>
+  <div class="dateline serif" id="dateline"></div>
+  <div class="thick-rule"></div>
+
+  <section id="lead"></section>
+  <div class="rule-heavy" style="margin: 12px 0 2px 0;"></div>
+  <section class="grid" id="grid"></section>
+  <div class="rule-heavy" style="margin: 2px 0 0 0;"></div>
+  <section class="bottom" id="bottom"></section>
+  <div class="ticker" id="ticker"></div>
+  <div class="sources" id="sources"></div>
+
+<script>
+/* =====================================================================
+   MONDAY 23 NOVEMBER 2026 — THE DAY'S STORIES, AS REPORTED.
+   Every line below comes from the day's wire and news reporting
+   (Reuters, AP, AFP, BBC, CNN, ATP Tour), credited at the foot of the
+   page. Nothing here is invented. Change the words in this one block
+   and the whole front page follows.
+   ===================================================================== */
+const DAY = "SENIN, 23 NOVEMBER 2026";
+
+const LEAD = {
+  eyebrow: "ANTALYA &middot; CLIMATE",
+  headline: "COP31 Collapses: No Deal in Antalya",
+  text: "United Nations climate talks in Antalya, T&uuml;rkiye, ended after about 48 hours of overtime with no overarching agreement. The European Union and others refused any deal without language on phasing out fossil fuels.",
+  extra: "The first full collapse of a COP's main agreement since Copenhagen in 2009. In Australia, the failure brought a backlash against COP31 president Chris Bowen, while Pacific island nations spoke of despair.",
+  art: "globe"
+};
+
+const GRID = [
+  {
+    eyebrow: "WASHINGTON &middot; U.S. POLITICS",
+    headline: "Democrats Clinch 258 House Seats",
+    text: "House Democrats secured at least 258 seats, a gain of 44 &mdash; the largest House majority for either party since 1992. The 258th seat fell on Sunday, when Chuck Hubbard defeated Rep. Virginia Foxx in North Carolina.",
+    art: "capitol"
+  },
+  {
+    eyebrow: "BENGHAZI &middot; WAR AT SEA",
+    headline: "Ukraine Sinks Russian Warship off Libya",
+    text: "Ukrainian sea drones sank the Russian corvette Merkury, docked in Benghazi, and destroyed a Ka-27 combat helicopter aboard; the cargo vessel MV Angara was also hit. President Zelenskyy announced the strike on Monday.",
+    art: "ship"
+  },
+  {
+    eyebrow: "DYMER &middot; WAR IN UKRAINE",
+    headline: "Russian Strike on Dymer Kills 11",
+    text: "An overnight drone strike hit a five-storey residential building at about 05:00 on Sunday while families slept. At least 11 people were killed, including a teenager. A seven-year-old boy, Davyd, was pulled alive after about 14 hours under the rubble.",
+    art: "rescue"
+  },
+  {
+    eyebrow: "TURIN &middot; TENNIS",
+    headline: "Alcaraz Wins Maiden ATP Finals Title",
+    text: "Carlos Alcaraz beat world No. 1 Alexander Zverev 6&ndash;2, 7&ndash;6(7) on Sunday, saving three set points in the tie-break. The first Spanish ATP Finals champion since Alex Corretja in 1998, it was his sixth title of 2026.",
+    art: "trophy"
+  }
+];
+
+const BOTTOM = {
+  eyebrow: "CIKANDE, BANTEN &middot; INDONESIA",
+  headline: "Cikande Factory Fire Toll Rises to 24",
+  text: "Indonesia confirmed on Monday that 24 people have died in the fire at the PT Fonusa Agung Mulia candy factory, with about 30 still missing and some 300 workers on shift. A short circuit in an air conditioner is suspected.",
+  art: "fire"
+};
+
+const TICKER = "<b>THE DAY</b>&nbsp;&nbsp;ANTALYA &middot; WASHINGTON &middot; BENGHAZI &middot; DYMER &middot; TURIN &middot; CIKANDE &nbsp;&mdash;&nbsp; MONDAY 23 NOVEMBER 2026";
+const SOURCES = "As reported by Reuters &middot; AP &middot; AFP &middot; BBC &middot; CNN &middot; ATP Tour &mdash; drawn and typeset for make.fun";
+
+/* ---------------- hand-drawn pictures (inline SVG, drawn here) ---------------- */
+const ART = {
+  globe: `<svg width="320" height="206" viewBox="0 0 320 206">
+    <rect width="320" height="206" fill="#dce8f2"/>
+    <circle cx="160" cy="96" r="66" fill="#1d5a4a"/>
+    <path d="M128,58 q18,-16 38,-6 q20,10 12,30 q-8,18 -28,14 q-24,-4 -22,-38 Z" fill="#7fb069"/>
+    <path d="M128,118 q20,16 44,6 q10,-8 2,-18 q-22,8 -46,12 Z" fill="#7fb069"/>
+    <path d="M150,34 L168,62 L150,74 L164,96 L146,112 L160,140 L146,162" stroke="#f6f1e3" stroke-width="4" fill="none"/>
+    <rect x="52" y="168" width="216" height="8" fill="#1a1510"/>
+    <text x="160" y="30" text-anchor="middle" font-family="Liberation Sans" font-size="16" font-weight="bold" fill="#1a1510">NO DEAL AFTER 48 HOURS</text>
+    <text x="160" y="196" text-anchor="middle" font-family="Liberation Sans" font-size="13" font-weight="bold" fill="#9c1a1a">FIRST COLLAPSE SINCE COPENHAGEN 2009</text>
+  </svg>`,
+  capitol: `<svg width="104" height="104" viewBox="0 0 104 104">
+    <rect width="104" height="104" fill="#e9e4d4"/>
+    <rect x="8" y="88" width="88" height="6" fill="#1a1510"/>
+    <rect x="34" y="66" width="36" height="22" fill="#f6f1e6" stroke="#1a1510" stroke-width="2"/>
+    <path d="M30,66 A22,22 0 0 1 74,66 Z" fill="#1d3a5f"/>
+    <rect x="50" y="38" width="4" height="8" fill="#1a1510"/>
+    <circle cx="52" cy="36" r="3" fill="#1a1510"/>
+    <rect x="16" y="76" width="72" height="4" fill="#1a1510"/>
+    <rect x="40" y="72" width="5" height="10" fill="#1a1510"/>
+    <rect x="59" y="72" width="5" height="10" fill="#1a1510"/>
+    <text x="52" y="16" text-anchor="middle" font-family="Liberation Sans" font-size="15" font-weight="bold" fill="#9c1a1a">258 SEATS</text>
+  </svg>`,
+  ship: `<svg width="104" height="104" viewBox="0 0 104 104">
+    <rect width="104" height="104" fill="#dce8f2"/>
+    <path d="M14,58 L90,58 L82,72 L22,72 Z" fill="#1d3a5f"/>
+    <rect x="58" y="38" width="24" height="20" fill="#f6f1e6" stroke="#1a1510" stroke-width="2"/>
+    <rect x="30" y="48" width="26" height="10" fill="#9c1a1a"/>
+    <path d="M44,38 L44,24 M44,24 L56,30 L44,36" stroke="#1a1510" stroke-width="2.5" fill="none"/>
+    <path d="M20,84 q10,-6 20,0 q10,6 20,0 q10,-6 20,0" stroke="#1d5a4f" stroke-width="3" fill="none"/>
+    <path d="M52,58 L64,70" stroke="#e05a4e" stroke-width="3"/>
+    <path d="M78,58 L66,70" stroke="#e05a4e" stroke-width="3"/>
+    <text x="52" y="14" text-anchor="middle" font-family="Liberation Sans" font-size="11" font-weight="bold" fill="#1a1510">SUNK OFF LIBYA</text>
+  </svg>`,
+  rescue: `<svg width="104" height="104" viewBox="0 0 104 104">
+    <rect width="104" height="104" fill="#16283e"/>
+    <g fill="#f6f1e6"><circle cx="16" cy="16" r="1.6"/><circle cx="88" cy="12" r="1.6"/><circle cx="72" cy="28" r="1.4"/></g>
+    <rect x="18" y="34" width="68" height="54" fill="#6f6452"/>
+    <g fill="#e0aa3e"><rect x="26" y="42" width="12" height="10"/><rect x="44" y="42" width="12" height="10"/><rect x="62" y="42" width="12" height="10"/><rect x="26" y="60" width="12" height="10"/><rect x="62" y="60" width="12" height="10"/></g>
+    <path d="M18,88 L44,66 L44,88 Z" fill="#38322a"/>
+    <path d="M56,88 L76,70 L86,88 Z" fill="#38322a"/>
+    <path d="M44,66 L60,52" stroke="#e05a4e" stroke-width="3"/>
+    <text x="52" y="14" text-anchor="middle" font-family="Liberation Sans" font-size="12" font-weight="bold" fill="#f6f1e6">11 KILLED</text>
+  </svg>`,
+  trophy: `<svg width="104" height="104" viewBox="0 0 104 104">
+    <rect width="104" height="104" fill="#dce8f2"/>
+    <rect x="12" y="76" width="80" height="10" fill="#1d5a4f"/>
+    <path d="M38,22 L66,22 L62,52 A12,12 0 0 1 42,52 Z" fill="#e0aa3e" stroke="#1a1510" stroke-width="2"/>
+    <path d="M38,28 q-14,2 -8,14 q4,8 14,6 M66,28 q14,2 8,14 q-4,8 -14,6" stroke="#e0aa3e" stroke-width="4" fill="none"/>
+    <rect x="48" y="62" width="8" height="10" fill="#e0aa3e" stroke="#1a1510" stroke-width="1.5"/>
+    <rect x="38" y="72" width="28" height="6" fill="#e0aa3e" stroke="#1a1510" stroke-width="1.5"/>
+    <circle cx="84" cy="20" r="9" fill="#c8d94a" stroke="#1a1510" stroke-width="1.5"/>
+    <path d="M77,16 q7,4 14,0" stroke="#1a1510" stroke-width="1.2" fill="none"/>
+    <text x="52" y="100" text-anchor="middle" font-family="Liberation Sans" font-size="12" font-weight="bold" fill="#1a1510">6&ndash;2, 7&ndash;6(7)</text>
+  </svg>`,
+  fire: `<svg width="76" height="84" viewBox="0 0 76 84">
+    <rect width="76" height="84" fill="#e9e4d4"/>
+    <rect x="10" y="52" width="56" height="24" fill="#6f6452"/>
+    <rect x="16" y="58" width="11" height="10" fill="#e0aa3e"/>
+    <rect x="49" y="58" width="11" height="10" fill="#e0aa3e"/>
+    <path d="M38,52 C26,43 29,30 38,16 C42,25 49,28 47,39 C51,35 53,42 49,48 C45,52 41,54 38,52 Z" fill="#e05a4e"/>
+    <path d="M38,50 C33,45 34,38 38,30 C40,36 44,38 43,43 C45,41 46,45 44,48 C42,50 40,51 38,50 Z" fill="#e0aa3e"/>
+    <text x="38" y="12" text-anchor="middle" font-family="Liberation Sans" font-size="12" font-weight="bold" fill="#9c1a1a">24 DEAD</text>
+  </svg>`
+};
+
+/* ---------------- build the page from the story block ---------------- */
+document.getElementById("dateline").textContent = DAY;
+
+document.getElementById("lead").innerHTML = `
+  <div class="eyebrow">${LEAD.eyebrow}</div>
+  <h1 class="lead-head serif">${LEAD.headline}</h1>
+  <div class="lead-row">
+    <div class="copy">
+      <p class="deck">${LEAD.text}</p>
+      <p class="deck serif">${LEAD.extra}</p>
+    </div>
+    <div class="lead-art">${ART[LEAD.art]}</div>
+  </div>`;
+
+document.getElementById("grid").innerHTML = GRID.map((s, i) => `
+  <article class="story${i >= 2 ? " rule-thin" : ""}">
+    <div class="thumb">${ART[s.art]}</div>
+    <div>
+      <div class="eyebrow">${s.eyebrow}</div>
+      <h2 class="serif">${s.headline}</h2>
+      <p class="deck">${s.text}</p>
+    </div>
+  </article>`).join("");
+
+document.getElementById("bottom").innerHTML = `
+  <div class="thumb">${ART[BOTTOM.art]}</div>
+  <div>
+    <div class="eyebrow">${BOTTOM.eyebrow}</div>
+    <h2 class="serif">${BOTTOM.headline}</h2>
+    <p class="deck">${BOTTOM.text}</p>
+  </div>
+  <div class="update">UPDATED TOLL</div>`;
+
+document.getElementById("ticker").innerHTML = TICKER;
+document.getElementById("sources").innerHTML = SOURCES;
+</script>
+</body>
+</html>
